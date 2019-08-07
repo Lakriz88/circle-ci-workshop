@@ -22,7 +22,7 @@ jobs:
          path: /code/test-results
          destination: prefix
 workflows:
-  version: 2.0
+  version: 2
   two_job_flow:
     jobs:
       - test
