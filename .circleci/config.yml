@@ -10,10 +10,11 @@ jobs:
             gradle test
       - store_test_results:
          path: build/test-results
-    test: 
-      docker:
-        - image: circleci/openjdk:8-jdk
-      steps:
+  test: 
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
       - run:
           command:
             gradle jar
