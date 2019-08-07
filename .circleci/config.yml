@@ -6,11 +6,18 @@ jobs:
     steps:
       - checkout
       - run: 
-         command: 
-          gradle test
-          gradle jar
+          command: 
+            gradle test
       - store_test_results:
          path: build/test-results
+    test: 
+      docker:
+        - image: circleci/openjdk:8-jdk
+      steps:
+      - run:
+          command:
+            gradle jar
       - store_artifacts:
          path: /code/test-results
          destination: prefix
+
