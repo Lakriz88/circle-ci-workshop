@@ -21,11 +21,11 @@ jobs:
       - store_artifacts:
          path: /code/test-results
          destination: prefix
-  workflows:
-    version: 2.0
-    two_job_flow:
-      jobs:
-        - test
-        - build:
-           requires:
-             - test
+workflows:
+  version: 2.0
+  two_job_flow:
+    jobs:
+      - test
+      - build:
+         requires:
+           - test
